@@ -40,4 +40,20 @@ class UserInformation
         return $result;
     }
 
+    //create a new record
+    public function create()
+    {
+        $query = 'INSERT INTO ' . $this->table . ' (id, structureName, structureOwner ) VALUES(NULL, \'' . $this->structureName . '\',\'' . $this->structureOwner . '\')';
+
+        //execute the query
+        $this->conn->query($query);
+
+        if ($this->conn->affected_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 }
