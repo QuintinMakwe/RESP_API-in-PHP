@@ -1,6 +1,6 @@
 <?php
 //Headers
-header('Access-Control-Allow-Origin');
+header('Access-Control-Allow-Origin: *');
 header('Content-Type: applicaton/json');
 
 include_once '../../config/connectDB.php';
