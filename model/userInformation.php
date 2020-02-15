@@ -72,4 +72,19 @@ class UserInformation
 
     }
 
+    //Delete a record
+    public function delete()
+    {
+        $query = 'DELETE FROM ' . $this->table . ' WHERE id=' . $this->id . ' ';
+
+        //execute the query
+        $this->conn->query($query);
+
+        if ($this->conn->affected_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
