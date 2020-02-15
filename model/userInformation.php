@@ -56,4 +56,20 @@ class UserInformation
 
     }
 
+    //update a record
+    public function update()
+    {
+        $query = 'UPDATE ' . $this->table . ' SET structureName =\'' . $this->structureName . '\',' . ' structureOwner=\'' . $this->structureOwner . '\'' . ' WHERE id=' . $this->id . ' ';
+
+        //execute the query
+        $this->conn->query($query);
+
+        if ($this->conn->affected_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 }
